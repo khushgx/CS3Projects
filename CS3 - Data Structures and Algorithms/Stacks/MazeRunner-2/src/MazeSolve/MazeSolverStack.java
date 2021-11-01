@@ -1,0 +1,37 @@
+package MazeSolve;
+
+public class MazeSolverStack extends MazeSolver
+{
+	
+	public MazeSolverStack(Maze maze)
+	{
+		
+		super(maze);
+	}
+
+	@Override
+	void makeEmpty() {
+		stack = new MyStack();
+		
+	}
+
+	@Override
+	boolean isEmpty() {
+		if(stack.isEmpty())
+			return true;
+		return false;
+	}
+
+	@Override
+	void add(Square s) {
+		stack.push(s);
+	}
+
+	@Override
+	Square next() {
+		return stack.pop();
+	}
+	
+	
+
+}
